@@ -1,4 +1,4 @@
-name: Open a bi-weekly team planning issue
+name: Open a weekly team standup issue
 on:
   schedule:
   - cron: "0 20 * * Wed" # Trigger every Wed at 8PM
