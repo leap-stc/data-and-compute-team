@@ -1,0 +1,16 @@
+# From https://github.com/marketplace/actions/close-matching-issues
+name: Close team planning issue
+on:
+  schedule:
+  - cron: "0 20 * * Tue" # Trigger every Tue at 8PM
+
+  workflow_dispatch:
+
+jobs:
+  close-sync-issue:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: lee-dohm/close-matching-issues@v2
+      with:
+        query: 'label:"type: team-planning" is:open'
+        token: ${{ secrets.GITHUB_TOKEN }}
